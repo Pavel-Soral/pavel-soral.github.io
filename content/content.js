@@ -150,7 +150,7 @@ window.PORTFOLIO = {
                 "en": "View Work",
                 "sk": "Pozrite si prácu"
               },
-              "goto": "blog-posts",
+              "goto": "content-creation",
               "kind": "suggested"
             },
             {

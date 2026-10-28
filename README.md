@@ -9,14 +9,16 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
 
 ## What’s inside
 
-- **20 pages in 6 sections:** About, Content Creation, Campaigns, Narrative Design, Creative Work, Contact.
+- **One page per section:** About, Content Creation, Campaigns, Narrative Design and Creative Work, the same
+  sections as the PDF portfolio. Each page is one long scroll of blocks (20 in total), with a sticky row of chips to
+  jump between them. Every page ends with the same Contact Me block, which the Contact menu item scrolls to.
 - **Animated results:** bars grow and numbers count up when they scroll into view. Hover or focus a bar to read its value.
   Every chart also has a hidden data table for screen readers.
 - **Documents open in place:** Google Drive files and folders (case studies, magazines, storylines) open in a built-in
   preview. Other articles open on their original site in a new tab.
 - **Two languages:** English and Slovak, with a toggle in the header. `?lang=sk` in the URL opens the Slovak version.
 - **Light and dark themes** with a toggle; the choice is remembered.
-- **Keyboard friendly:** ← and → move between pages, every control has a visible focus state, and motion is turned off
+- **Keyboard friendly:** ← and → move between sections, every control has a visible focus state, and motion is turned off
   for people who ask their system to reduce it.
 
 ![Animated chart](docs/screenshot-chart.webp)
@@ -39,8 +41,9 @@ assets/fonts/           Inter, subset to Latin + Central European characters
 ```
 
 The look follows GNOME’s Adwaita conventions (header bar with a view switcher, boxed lists, cards, pill buttons)
-with my own “Lime Signal” palette. Pages are addressed by hash (`#blog-posts`, `#contacts-growth`), so every page
-can be linked directly and the site works on any static host without server rules.
+with my own “Lime Signal” palette. Links use the hash: `#campaigns` opens a section from the top, `#contacts-growth`
+opens its section and scrolls to that block, and `#contact` scrolls to the contact block. Every block can be linked
+directly, and the site works on any static host without server rules.
 
 ## Run it locally
 
@@ -67,7 +70,7 @@ both languages) or a pair:
 | `linkedin` | the LinkedIn row on the Contact page |
 | `repo` | the “Source code on GitHub” link in the footer |
 | `phone` | a phone row on the Contact page (left empty on purpose for a public site) |
-| `links.blogs`, `links.cases`, `links.product`, `links.ebooks`, `links.landing`, `links.social`, `links.story` | the green buttons on the matching pages; a button stays hidden until its link is set |
+| `links.blogs`, `links.cases`, `links.product`, `links.ebooks`, `links.landing`, `links.social`, `links.story` | the green buttons on the matching blocks; a button stays hidden until its link is set |
 
 Google Drive links open in the built-in preview only when the file or folder is shared as
 **Anyone with the link → Viewer**. Otherwise the preview stays empty and visitors use “Open in a new tab”.

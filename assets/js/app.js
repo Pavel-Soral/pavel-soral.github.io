@@ -230,15 +230,14 @@
     return fn ? fn(b) : "";
   }
 
-  // ---------------------------------------------------------------- page renderers
-  function headHTML(p, withCta) {
+  // ---------------------------------------------------------------- block renderers (one portfolio slide = one block)
+  function headHTML(p) {
     return `
       <div class="page-head">
-        <h1 tabindex="-1">${T(p.title)}</h1>
+        <h2 class="block-title">${T(p.title)}</h2>
         ${p.subtitle ? `<p class="subtitle">${T(p.subtitle)}</p>` : ""}
         ${p.intro ? `<p class="intro">${T(p.intro)}</p>` : ""}
         ${p.chips ? `<div class="chips">${p.chips.map((c) => `<span class="chip">${T(c)}</span>`).join("")}</div>` : ""}
-        ${withCta && resolveLink(p.cta) ? `<div>${ctaButton(p.cta)}</div>` : ""}
       </div>`;
   }
 
@@ -262,13 +261,17 @@
       <button class="copy-button" type="button" data-copy="${esc(CFG.email)}">${icon("copy")}<span>${esc(ui("copy"))}</span></button></li>`);
     if (CFG.phone) rows.push(`<li class="row">${icon("phone")}<span class="row-text"><span class="row-title">${esc(ui("phone"))}</span>
       <a class="row-sub" href="tel:${esc(CFG.phone.replace(/\s/g, ""))}">${esc(CFG.phone)}</a></span></li>`);
-    if (CFG.linkedin) rows.push(`<li class="row"><a class="row-link" style="display:contents" href="${esc(CFG.linkedin)}" target="_blank" rel="noopener">${icon("person")}<span class="row-text"><span class="row-title">LinkedIn</span><span class="row-sub">${esc(CFG.name)}</span></span>${icon("cursor", "cursor-icon")}</a></li>`);
+    if (CFG.linkedin) rows.push(`<li class="row"><a class="row-link" href="${esc(CFG.linkedin)}" target="_blank" rel="noopener">${icon("person")}<span class="row-text"><span class="row-title">LinkedIn</span><span class="row-sub">${esc(CFG.name)}</span></span>${icon("cursor", "cursor-icon")}</a></li>`);
     rows.push(`<li class="row">${icon("location")}<span class="row-text"><span class="row-title">${esc(ui("location"))}</span><span class="row-sub">${T(CFG.location)}</span></span></li>`);
     return `
-      <div class="hero">
-        <div class="avatar" style="width:clamp(120px,14vw,170px)">${imgTag(p.avatar)}</div>
-        <div><h1 tabindex="-1" style="font-size:clamp(2.5rem,1.8rem + 3vw,4.25rem)">${T(p.title)}</h1></div>
-        <p class="intro">${T(p.intro)}</p>
+      <div class="contact-card">
+        <div class="contact-intro">
+          <div class="avatar avatar-sm">${imgTag(p.avatar)}</div>
+          <div>
+            <h2 class="block-title">${T(p.title)}</h2>
+            <p class="intro">${T(p.intro)}</p>
+          </div>
+        </div>
         <ul class="boxed-list contact-list">${rows.join("")}</ul>
       </div>`;
   }
@@ -278,7 +281,7 @@
       return `
         <div class="layout-split${p.flip ? " flip" : ""}">
           <div class="col-aside">
-            ${headHTML(p, false)}
+            ${headHTML(p)}
             ${(p.aside || []).map(block).join("")}
             ${resolveLink(p.cta) ? `<div>${ctaButton(p.cta)}</div>` : ""}
           </div>
@@ -286,42 +289,64 @@
         </div>`;
     }
     return `
-      <div class="head-row">${headHTML(p, false)}${resolveLink(p.cta) ? ctaButton(p.cta) : ""}</div>
+      <div class="head-row">${headHTML(p)}${resolveLink(p.cta) ? ctaButton(p.cta) : ""}</div>
       <div class="stack-body">${(p.main || []).map(block).join("")}</div>`;
   }
 
-  function subnavHTML(p) {
-    const pages = p.section.pages;
-    if (pages.length < 2) return "";
+  const renderBlock = (p) => (p.type === "hero" ? renderHero(p) : renderGeneric(p));
+
+  // ---------------------------------------------------------------- sections (one menu item = one scrollable page)
+  const CONTACT = DATA.sections.find((s) => s.id === "contact");
+  const CONTACT_PAGE = CONTACT ? CONTACT.pages[0] : null;
+  const SECTIONS = DATA.sections.filter((s) => s !== CONTACT);
+  const sectionById = new Map(SECTIONS.map((s) => [s.id, s]));
+  const blockId = (id) => `b-${id}`;
+
+  function subnavHTML(sec) {
+    if (sec.pages.length < 2 || sec.pages[0].type === "hero") return "";
     return `
-      <nav class="subnav wrap" aria-label="${esc(ui("pagesIn"))}">
-        <ul>${pages.map((q) => `<li><a href="#${q.id}" ${q.id === p.id ? 'aria-current="page"' : ""}>${T(q.nav || q.title)}</a></li>`).join("")}</ul>
+      <nav class="subnav" aria-label="${esc(ui("pagesIn"))}">
+        <div class="wrap"><ul>${sec.pages.map((q) => `<li><a href="#${q.id}" data-spy="${q.id}">${T(q.nav || q.title)}</a></li>`).join("")}</ul></div>
       </nav>`;
   }
 
-  function pagerHTML(p) {
-    const i = PAGES.indexOf(p);
-    const prev = PAGES[i - 1], next = PAGES[i + 1];
+  function pagerHTML(sec) {
+    const i = SECTIONS.indexOf(sec);
+    const prev = SECTIONS[i - 1], next = SECTIONS[i + 1];
     return `
-      <nav class="pager wrap" aria-label="Pager">
+      <nav class="pager wrap" aria-label="${esc(ui("sections"))}">
         <div class="pager-nav">
-          ${prev ? `<a class="pager-link prev" href="#${prev.id}" rel="prev"><span class="pager-dir">${icon("prev")}${esc(ui("prev"))}</span><span class="pager-title">${T(prev.nav || prev.title)}</span></a>` : "<span></span>"}
-          ${next ? `<a class="pager-link next" href="#${next.id}" rel="next"><span class="pager-dir">${esc(ui("next"))}${icon("next")}</span><span class="pager-title">${T(next.nav || next.title)}</span></a>` : ""}
+          ${prev ? `<a class="pager-link prev" href="#${prev.id}" rel="prev"><span class="pager-dir">${icon("prev")}${esc(ui("prev"))}</span><span class="pager-title">${T(prev.title)}</span></a>` : "<span></span>"}
+          ${next ? `<a class="pager-link next" href="#${next.id}" rel="next"><span class="pager-dir">${esc(ui("next"))}${icon("next")}</span><span class="pager-title">${T(next.title)}</span></a>` : ""}
         </div>
-        <div class="dots">${PAGES.map((q, k) => `<a href="#${q.id}" aria-label="${esc(t(q.title))}" ${k === i ? 'aria-current="page"' : ""}></a>`).join("")}</div>
-        <p class="counter">${i + 1} ${esc(ui("of"))} ${PAGES.length}</p>
       </nav>`;
+  }
+
+  function sectionHTML(sec, enter) {
+    const isHome = sec.pages[0].type === "hero";
+    return `
+      ${isHome ? "" : `<h1 class="sr-only" tabindex="-1">${T(sec.title)}</h1>`}
+      ${subnavHTML(sec)}
+      <div class="blocks">
+        ${sec.pages.map((p, k) => `
+          <section class="block wrap${enter && k === 0 ? " enter" : ""}${p.type === "hero" ? " block-hero" : ""}" id="${blockId(p.id)}" aria-label="${esc(t(p.nav || p.title))}">
+            ${renderBlock(p)}
+          </section>`).join("")}
+      </div>
+      ${pagerHTML(sec)}
+      ${CONTACT_PAGE ? `<section class="contact-band" id="${blockId("contact")}"><div class="wrap">${renderContact(CONTACT_PAGE)}</div></section>` : ""}`;
   }
 
   // ---------------------------------------------------------------- shell
   function shellHTML() {
+    const home = SECTIONS[0];
     return `
       <a class="skip-link" href="#main" data-skip>${esc(ui("skip"))}</a>
       <header class="headerbar">
         <div class="wrap">
-          <a class="brand" href="#home"><img src="${esc(byId.get("home").avatar.src)}" alt="" width="34" height="34"><span>${esc(CFG.name)}</span></a>
+          <a class="brand" href="#${home.id}"><img src="${esc(byId.get("home").avatar.src)}" alt="" width="34" height="34"><span>${esc(CFG.name)}</span></a>
           <nav class="switcher" aria-label="${esc(ui("sections"))}">
-            ${DATA.sections.map((s) => `<a href="#${s.pages[0].id}" data-section="${s.id}">${T(s.title)}</a>`).join("")}
+            ${DATA.sections.map((s) => `<a href="#${s === CONTACT ? "contact" : s.id}" data-section="${s.id}">${T(s.title)}</a>`).join("")}
           </nav>
           <div class="header-end">
             <div class="lang-toggle" role="group" aria-label="${esc(ui("language"))}">
@@ -336,12 +361,11 @@
       <aside class="sheet" id="sheet" hidden aria-label="${esc(ui("sections"))}">
         <div class="sheet-head"><h2>${esc(ui("sections"))}</h2><button class="icon-button" type="button" data-sheet-close aria-label="${esc(ui("close"))}">${icon("close", "icon-lg")}</button></div>
         <nav>
-          ${DATA.sections.map((s) => `<div><h3>${T(s.title)}</h3><ul>${s.pages.map((q) => `<li><a href="#${q.id}" data-page-link="${q.id}">${T(q.nav || q.title)}</a></li>`).join("")}</ul></div>`).join("")}
+          ${SECTIONS.map((s) => `<div><h3><a href="#${s.id}" data-sheet-section="${s.id}">${T(s.title)}</a></h3><ul>${s.pages.map((q) => `<li><a href="#${q.id}" data-page-link="${q.id}">${T(q.nav || q.title)}</a></li>`).join("")}</ul></div>`).join("")}
+          ${CONTACT ? `<div><h3><a href="#contact" data-page-link="contact">${T(CONTACT.title)}</a></h3></div>` : ""}
         </nav>
       </aside>
-      <div id="subnav-slot"></div>
       <main id="main" tabindex="-1"></main>
-      <div id="pager-slot"></div>
       <footer class="footer">
         <div class="wrap">
           <span>© ${new Date().getFullYear()} ${esc(CFG.name)} · ${esc(ui("credit"))}</span>
@@ -360,8 +384,8 @@
       <div class="tooltip" role="tooltip" hidden></div>`;
   }
 
-  // ---------------------------------------------------------------- render
-  let current = null;
+  // ---------------------------------------------------------------- routing & render
+  let current = null;   // current section
 
   function applyTheme() {
     document.documentElement.setAttribute("data-theme", theme);
@@ -374,35 +398,75 @@
     }
   }
 
-  function render(focus) {
+  /** #section → that page from the top; #block → its section, scrolled to the block; #contact → contact block here. */
+  function resolveHash() {
     const id = decodeURIComponent(location.hash.slice(1));
-    const page = byId.get(id) || byId.get("home");
-    const changed = current !== page;
-    current = page;
-    document.documentElement.lang = lang;
-    document.title = page.id === "home" ? `${CFG.name} · Portfolio` : `${t(page.title)} · ${CFG.name}`;
+    if (sectionById.has(id)) return { sec: sectionById.get(id), target: null };
+    if (id === "contact") return { sec: current || SECTIONS[0], target: "contact" };
+    const p = byId.get(id);
+    if (p && p.section !== CONTACT) return { sec: p.section, target: p.type === "hero" ? null : id };
+    return { sec: SECTIONS[0], target: null };
+  }
 
-    $("#subnav-slot").innerHTML = subnavHTML(page);
-    const body = page.type === "hero" ? renderHero(page) : page.type === "contact" ? renderContact(page) : renderGeneric(page);
-    const main = $("#main");
-    main.innerHTML = `<article class="page wrap${changed ? " enter" : ""}">${body}</article>`;
-    $("#pager-slot").innerHTML = pagerHTML(page);
+  const scrollBehavior = () => (REDUCED.matches ? "auto" : "smooth");
+
+  function scrollToBlock(id, smooth) {
+    const el = document.getElementById(blockId(id));
+    if (!el) return;
+    el.scrollIntoView({ behavior: smooth ? scrollBehavior() : "auto", block: "start" });
+    const h = $(".block-title", el) || el;
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+  }
+
+  function render(fromNav, keepScroll) {
+    const { sec, target } = resolveHash();
+    const changed = current !== sec;
+    current = sec;
+    document.documentElement.lang = lang;
+    document.title = sec === SECTIONS[0] ? `${CFG.name} · Portfolio` : `${t(sec.title)} · ${CFG.name}`;
 
     document.querySelectorAll(".switcher a").forEach((a) => {
-      if (a.dataset.section === page.section.id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+      const on = target === "contact" ? a.dataset.section === "contact" : a.dataset.section === sec.id;
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    document.querySelectorAll("[data-page-link]").forEach((a) => {
-      if (a.dataset.pageLink === page.id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    document.querySelectorAll("[data-sheet-section]").forEach((a) => {
+      if (a.dataset.sheetSection === sec.id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    const sub = $(".subnav a[aria-current]");
-    if (sub) sub.scrollIntoView({ block: "nearest", inline: "center" });
 
-    animateIn(main);
-    if (changed && focus) {
-      window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
-      const h1 = $("h1", main);
-      if (h1) h1.focus({ preventScroll: true });
+    const main = $("#main");
+    if (changed) {
+      main.innerHTML = sectionHTML(sec, true);
+      animateIn(main);
+      spy(main);
     }
+    if (keepScroll) return;
+    if (target) {
+      requestAnimationFrame(() => scrollToBlock(target, !changed));
+    } else if (changed || fromNav) {
+      window.scrollTo({ top: 0, behavior: changed ? "auto" : scrollBehavior() });
+      if (fromNav) { const h1 = $("h1", main); if (h1) h1.focus({ preventScroll: true }); }
+    }
+  }
+
+  // scrollspy: highlight the subnav chip of the block in view
+  let spyObs = null;
+  function spy(root) {
+    if (spyObs) spyObs.disconnect();
+    const links = new Map([...root.querySelectorAll("[data-spy]")].map((a) => [a.dataset.spy, a]));
+    if (!links.size || !("IntersectionObserver" in window)) return;
+    const visible = new Map();
+    spyObs = new IntersectionObserver((entries) => {
+      entries.forEach((en) => visible.set(en.target.id.slice(2), en.isIntersecting ? en.intersectionRatio : 0));
+      let best = null, ratio = 0;
+      links.forEach((_, id) => { const r = visible.get(id) || 0; if (r > ratio) { ratio = r; best = id; } });
+      if (!best) return;
+      links.forEach((a, id) => { if (id === best) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+      const a = links.get(best);
+      const ul = a.closest("ul");
+      if (ul) ul.scrollTo({ left: a.offsetLeft - ul.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
+    }, { rootMargin: "-30% 0px -50% 0px", threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+    links.forEach((_, id) => { const el = document.getElementById(blockId(id)); if (el) spyObs.observe(el); });
   }
 
   // ---------------------------------------------------------------- animation
@@ -467,7 +531,7 @@
     const sheet = $("#sheet"), scrim = $(".sheet-scrim"), btn = $("[data-menu]");
     sheet.hidden = !open; scrim.hidden = !open;
     btn.setAttribute("aria-expanded", String(open));
-    if (open) { const a = $("a[aria-current]", sheet) || $("a", sheet); if (a) a.focus(); } else btn.focus({ preventScroll: true });
+    if (open) { const a = $("a[aria-current]", sheet) || $("a", sheet); if (a) a.focus(); }
   }
 
   function openViewer(src, href, title) {
@@ -492,7 +556,10 @@
       }
       if (e.target.closest("[data-menu]")) { openSheet(true); return; }
       if (e.target.closest("[data-sheet-close]")) { openSheet(false); return; }
-      if (e.target.closest("[data-page-link]") && !$("#sheet").hidden) { openSheet(false); }
+      if (e.target.closest("[data-page-link], [data-sheet-section]") && !$("#sheet").hidden) { openSheet(false); }
+      // clicking a link to where we already are still scrolls there
+      const same = e.target.closest('a[href^="#"]');
+      if (same && same.getAttribute("href") === location.hash && !same.hasAttribute("data-skip")) { e.preventDefault(); render(true); return; }
       if (e.target.closest("[data-skip]")) { e.preventDefault(); $("#main").focus(); return; }
 
       const v = e.target.closest("[data-viewer]");
@@ -523,9 +590,9 @@
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
       if ($("#viewer").open || !$("#sheet").hidden) return;
       if (e.target.closest("input, textarea, select, [contenteditable]")) return;
-      const i = PAGES.indexOf(current);
-      if (e.key === "ArrowRight" && PAGES[i + 1]) location.hash = PAGES[i + 1].id;
-      if (e.key === "ArrowLeft" && PAGES[i - 1]) location.hash = PAGES[i - 1].id;
+      const i = SECTIONS.indexOf(current);
+      if (e.key === "ArrowRight" && SECTIONS[i + 1]) location.hash = SECTIONS[i + 1].id;
+      if (e.key === "ArrowLeft" && SECTIONS[i - 1]) location.hash = SECTIONS[i - 1].id;
     });
 
     // chart tooltip
@@ -554,11 +621,13 @@
   }
 
   function boot(first) {
+    const y = window.scrollY;
     document.getElementById("app").innerHTML = shellHTML();
     bindShell();
     applyTheme();
     current = null;
-    render(!first);
+    render(false, !first);
+    if (!first) window.scrollTo(0, y);
     if (first) bind();
   }
 
