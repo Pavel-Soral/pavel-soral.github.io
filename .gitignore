@@ -1,0 +1,11 @@
+# Never commit source material or private working files.
+*.pdf
+*.zip
+*.psd
+*.fig
+*.xlsx
+*.docx
+/private/
+/drafts/
+.DS_Store
+Thumbs.db
