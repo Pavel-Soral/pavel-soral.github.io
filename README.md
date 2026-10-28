@@ -126,10 +126,11 @@ once the repository is public.
 
 ## Licenses
 
-- **Code** (`index.html`, `404.html`, `assets/js/`, `assets/css/`, `assets/icons.svg`, `.github/`): MIT, see `LICENSE`.
+- **Code** (`index.html`, `404.html`, `assets/js/`, `assets/css/`, `assets/icons.svg`, `desktop/`, `snap/`, `.github/`):
+  GNU General Public License v3.0 or later, see `LICENSE`. You may use, change and share it, as long as what you
+  share stays under the same license and comes with its source code.
 - **Fonts** (`assets/fonts/`): Inter by The Inter Project Authors, SIL Open Font License 1.1, see `assets/fonts/OFL.txt`.
-- **Content** (`content/`, `assets/img/`, `docs/`): © Pavel Šoral and the respective owners. Not covered by the MIT
-  license. Work samples, screenshots and product images belong to the companies I created them for (Photoneo,
+- **Content** (`content/`, `assets/img/`, `docs/`): © Pavel Šoral and the respective owners. Not covered by the GPL. Work samples, screenshots and product images belong to the companies I created them for (Photoneo,
   now part of Zebra Technologies; QORPO; Slido; Foliovision; Immutable; Interez Media) and are shown here as a
   portfolio of my work. Product and company names are trademarks of their owners.
 - The visual style is inspired by GNOME’s Adwaita. This project is not affiliated with or endorsed by the GNOME

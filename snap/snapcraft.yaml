@@ -10,7 +10,7 @@ description: |
   It is the same site as the web version, in English, in a native GNOME window.
   Links to articles and landing pages open in your browser. Shared documents
   open in a preview inside the app.
-license: MIT
+license: GPL-3.0-or-later AND OFL-1.1
 contact: mailto:pavel.soral@proton.me
 # website: https://<your-user>.github.io/<repo-name>/
 # source-code: https://github.com/<your-user>/<repo-name>

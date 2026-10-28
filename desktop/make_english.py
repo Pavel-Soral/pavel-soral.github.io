@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 Pavel Šoral
 """Turn content/content.js into an English-only copy for the desktop app.
 
 Usage: make_english.py <path/to/content.js>   (rewrites the file in place)

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 Pavel Šoral
 """Pavel Šoral Portfolio: the website in a native GNOME window (GTK 3 + WebKitGTK).
 
 The page files are loaded from PORTFOLIO_WEB_ROOT (set by the snap) or, when run
@@ -225,7 +227,7 @@ class App(Gtk.Application):
         dialog.set_version(os.environ.get("SNAP_VERSION", "dev"))
         dialog.set_comments("Creative Marketing Specialist.\nContent creation, campaigns, narrative design and creative work.")
         dialog.set_authors(["Pavel Šoral <pavel.soral@proton.me>"])
-        dialog.set_license_type(Gtk.License.MIT_X11)
+        dialog.set_license_type(Gtk.License.GPL_3_0)
         dialog.set_copyright("© 2026 Pavel Šoral\nWork samples © their respective owners.\nDesign inspired by GNOME’s Adwaita.")
         if os.path.exists(ICON):
             dialog.set_logo(Gtk.Image.new_from_file(ICON).get_pixbuf())

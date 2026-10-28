@@ -1,4 +1,7 @@
-/* Pavel Šoral · Portfolio
+/* SPDX-License-Identifier: GPL-3.0-or-later
+   Copyright (C) 2026 Pavel Šoral
+
+   Pavel Šoral · Portfolio
    A small single-page app with no dependencies and no build step.
    Content lives in content/content.js (window.PORTFOLIO). */
 (() => {
