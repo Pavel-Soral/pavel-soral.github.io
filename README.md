@@ -94,10 +94,14 @@ Python app that shows the site in a native GNOME window (GTK 3 and WebKitGTK fro
   Google Drive documents open in the preview inside the app.
 - **Shortcuts:** Ctrl+R reload, F11 full screen, Ctrl+Q quit.
 
-**Try it from a checkout** (Ubuntu 24.04):
+**Try it from a checkout**, without the snap:
 
 ```sh
+# Ubuntu / Debian
 sudo apt install gir1.2-webkit2-4.1 python3-gi
+# openSUSE Tumbleweed
+sudo zypper install python3-gobject python3-gobject-Gdk typelib-1_0-Gtk-3_0 typelib-1_0-WebKit2-4_1
+
 python3 desktop/portfolio.py
 ```
 
