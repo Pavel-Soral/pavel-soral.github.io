@@ -100,9 +100,10 @@
     <div class="cards cols-${b.cols || 3}">
       ${b.items.map((c) => {
         const fit = c.fit || b.fit;
-        const thumb = `<div class="thumb${fit === "contain" ? (b.fit === "contain" ? " soft contain" : " contain") : ""}" style="--ar:${b.aspect || "16 / 9"}">${imgTag(c.img)}</div>`;
-        const body = `<div class="body"><span class="title">${T(c.title)}</span>${c.caption ? `<span class="caption">${c.url ? icon("cursor", "cursor-icon") : ""}${T(c.caption)}</span>` : ""}</div>`;
-        return c.url ? `<a class="media-card card" ${linkAttrs(c.url, t(c.title))}>${thumb}${body}</a>`
+        const url = c.url || (c.link ? CFG.links[c.link] : null);
+        const thumb = `<div class="thumb${fit === "contain" ? (b.fit === "contain" ? " soft contain" : " contain") : ""}${b.play ? " has-play" : ""}" style="--ar:${b.aspect || "16 / 9"}">${imgTag(c.img)}${b.play ? `<span class="play-badge" aria-hidden="true">${icon("play")}</span>` : ""}</div>`;
+        const body = `<div class="body"><span class="title">${T(c.title)}</span>${c.caption ? `<span class="caption">${url ? icon(b.play ? "play" : "cursor", "cursor-icon") : ""}${T(c.caption)}</span>` : ""}</div>`;
+        return url ? `<a class="media-card card" ${linkAttrs(url, t(c.title))}>${thumb}${body}</a>`
                      : `<div class="media-card card">${thumb}${body}</div>`;
       }).join("")}
     </div>`;

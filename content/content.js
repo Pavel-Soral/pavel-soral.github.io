@@ -23,7 +23,8 @@ window.PORTFOLIO = {
       "ebooks": null,
       "landing": null,
       "social": null,
-      "story": null
+      "story": null,
+      "webinars": null
     }
   },
   "ui": {
@@ -701,6 +702,121 @@ window.PORTFOLIO = {
                   "caption": "ai.photoneo.com",
                   "title": "From Press Shop to General Assembly: How 3D Vision Drives Car Manufacturing Automation",
                   "url": "https://ai.photoneo.com/3d-vision-automotive-manufacturing-ebook"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "webinars",
+          "title": {
+            "en": "Webinars",
+            "sk": "Webináre"
+          },
+          "layout": "stack",
+          "intro": {
+            "en": "From the first script to the live stream, I worked on Photoneo’s product webinars. I wrote the scripts and the content, and worked with the presenters and product teams to get every detail right.",
+            "sk": "Na produktových webinároch Photoneo som pracoval od prvého scenára až po živý prenos. Písal som scenáre aj obsah a s prezentujúcimi a produktovými tímami som ladil každý detail."
+          },
+          "cta": {
+            "label": {
+              "en": "Watch the Webinars",
+              "sk": "Pozrite si webináre"
+            },
+            "link": "webinars",
+            "url": null
+          },
+          "main": [
+            {
+              "type": "cards",
+              "cols": 3,
+              "play": true,
+              "items": [
+                {
+                  "img": {
+                    "src": "assets/img/webinar-phoxi.webp",
+                    "w": 960,
+                    "h": 540,
+                    "alt": "Three presenters on a studio stage in front of a Zebra and Photoneo screen"
+                  },
+                  "title": {
+                    "en": "PhoXi 3D Scanner Gen3 Launch",
+                    "sk": "Uvedenie PhoXi 3D Scanner Gen3"
+                  },
+                  "caption": {
+                    "en": "Product launch event",
+                    "sk": "Uvedenie produktu na trh"
+                  },
+                  "link": "webinars"
+                },
+                {
+                  "img": {
+                    "src": "assets/img/webinar-motioncam.webp",
+                    "w": 960,
+                    "h": 540,
+                    "alt": "MotionCam-3D Color point cloud of parts in bins, shown in the scanner software"
+                  },
+                  "title": {
+                    "en": "MotionCam-3D Color (Blue) Launch",
+                    "sk": "Uvedenie MotionCam-3D Color (Blue)"
+                  },
+                  "caption": {
+                    "en": "Product launch event",
+                    "sk": "Uvedenie produktu na trh"
+                  },
+                  "link": "webinars"
+                },
+                {
+                  "img": {
+                    "src": "assets/img/webinar-abb.webp",
+                    "w": 960,
+                    "h": 540,
+                    "alt": "ABB GoFa collaborative robot with a measuring probe"
+                  },
+                  "title": "Mastering Complex Automation with 3D Vision-Guided Robotics",
+                  "caption": {
+                    "en": "Webinar with ABB Robotics",
+                    "sk": "Webinár s ABB Robotics"
+                  },
+                  "link": "webinars"
+                }
+              ]
+            },
+            {
+              "type": "steps",
+              "items": [
+                {
+                  "icon": "pencil",
+                  "title": {
+                    "en": "Wrote the scripts",
+                    "sk": "Písal som scenáre"
+                  },
+                  "sub": {
+                    "en": "Structure, talking points and the story of each episode",
+                    "sk": "Štruktúra, hlavné body a príbeh každej epizódy"
+                  }
+                },
+                {
+                  "icon": "doc",
+                  "title": {
+                    "en": "Created the content",
+                    "sk": "Tvoril som obsah"
+                  },
+                  "sub": {
+                    "en": "Slides, demo flow, on-screen text and the promotion around it",
+                    "sk": "Prezentácie, priebeh ukážok, texty na obrazovke aj propagácia"
+                  }
+                },
+                {
+                  "icon": "team",
+                  "title": {
+                    "en": "Worked with people",
+                    "sk": "Spolupracoval som s ľuďmi"
+                  },
+                  "sub": {
+                    "en": "Prepared the presenters and checked every detail with the product teams",
+                    "sk": "Pripravoval som prezentujúcich a každý detail som overil s produktovými tímami"
+                  }
                 }
               ]
             }

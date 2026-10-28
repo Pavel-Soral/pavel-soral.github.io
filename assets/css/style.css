@@ -293,6 +293,14 @@ a.media-card:hover, button.media-card:hover { transform: translateY(-2px); }
 .media-card .thumb.contain { background: #ffffff; display: grid; place-items: center; padding: 10px; }
 .media-card .thumb.contain img { object-fit: contain; }
 .media-card .thumb.soft { background: var(--button); padding: 16px; }
+.media-card .thumb.has-play { position: relative; }
+.play-badge {
+  position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(0, 0, 0, .55); color: #ffffff;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: transform .2s var(--ease), background-color .2s;
+}
+.play-badge .icon { width: 22px; height: 22px; margin-left: 3px; }
+a.media-card:hover .play-badge { transform: scale(1.08); background: var(--accent-bg); color: var(--accent-fg); }
 .media-card .body { display: grid; gap: 6px; padding: 14px 16px 16px; flex: 1; align-content: start; }
 .media-card .title { font-weight: 700; font-size: var(--fs-heading); line-height: 1.35; }
 .media-card .caption { display: flex; align-items: center; gap: 6px; font-size: var(--fs-caption); color: var(--dim); }

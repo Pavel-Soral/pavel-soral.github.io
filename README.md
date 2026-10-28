@@ -10,7 +10,7 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
 ## What’s inside
 
 - **One page per section:** About, Content Creation, Campaigns, Narrative Design and Creative Work, the same
-  sections as the PDF portfolio. Each page is one long scroll of blocks (20 in total), with a sticky row of chips to
+  sections as the PDF portfolio. Each page is one long scroll of blocks (21 in total), with a sticky row of chips to
   jump between them. Every page ends with the same Contact Me block, which the Contact menu item scrolls to.
 - **Animated results:** bars grow and numbers count up when they scroll into view. Hover or focus a bar to read its value.
   Every chart also has a hidden data table for screen readers.
@@ -70,7 +70,7 @@ both languages) or a pair:
 | `linkedin` | the LinkedIn row on the Contact page |
 | `repo` | the “Source code on GitHub” link in the footer |
 | `phone` | a phone row on the Contact page (left empty on purpose for a public site) |
-| `links.blogs`, `links.cases`, `links.product`, `links.ebooks`, `links.landing`, `links.social`, `links.story` | the green buttons on the matching blocks; a button stays hidden until its link is set |
+| `links.blogs`, `links.cases`, `links.product`, `links.ebooks`, `links.landing`, `links.social`, `links.story`, `links.webinars` | the green buttons on the matching blocks; a button stays hidden until its link is set |
 
 Google Drive links open in the built-in preview only when the file or folder is shared as
 **Anyone with the link → Viewer**. Otherwise the preview stays empty and visitors use “Open in a new tab”.
