@@ -13,7 +13,7 @@ window.PORTFOLIO = {
     },
     "phone": null,
     "linkedin": null,
-    "repo": null,
+    "repo": "https://github.com/Pavel-Soral/pavel-soral.github.io",
     "defaultLanguage": "en",
     "defaultTheme": "dark",
     "links": {

@@ -3,7 +3,7 @@
 My portfolio as a small web app: content marketing, copywriting, campaigns, narrative design and a book debut.
 It runs in any browser, works on phones, and has light and dark themes in English and Slovak.
 
-**Live:** `https://<your-user>.github.io/<repo-name>/` (see [Deploy](#deploy))
+**Live:** https://pavel-soral.github.io
 
 ![Home screen](docs/screenshot-home.webp)
 
@@ -50,8 +50,8 @@ directly, and the site works on any static host without server rules.
 ## Run it locally
 
 ```sh
-git clone https://github.com/<your-user>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/Pavel-Soral/pavel-soral.github.io.git
+cd pavel-soral.github.io
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
@@ -125,8 +125,7 @@ run’s **Artifacts**.
 3. Push a tag such as `v1.0.0`. The workflow builds the snap and releases it to the stable channel.
    Then anyone can run `sudo snap install pavel-soral-portfolio`.
 
-Change `version` in `snap/snapcraft.yaml` for each release, and fill in `website` and `source-code` there
-once the repository is public.
+Change `version` in `snap/snapcraft.yaml` for each release.
 
 ## Licenses
 
