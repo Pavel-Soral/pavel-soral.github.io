@@ -1,0 +1,29 @@
+name: Build snap
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    env:
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: build
+        uses: snapcore/action-build@v1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pavel-soral-portfolio-snap
+          path: ${{ steps.build.outputs.snap }}
+      # Publishes tagged releases (v1.0.0 …) to the Snap Store once the name is registered
+      # and the SNAPCRAFT_STORE_CREDENTIALS secret is set (see README, "Desktop app (snap)").
+      - if: startsWith(github.ref, 'refs/tags/v') && env.SNAPCRAFT_STORE_CREDENTIALS != ''
+        uses: snapcore/action-publish@v1
+        with:
+          snap: ${{ steps.build.outputs.snap }}
+          release: stable

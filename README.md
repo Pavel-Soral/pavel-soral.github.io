@@ -36,7 +36,10 @@ assets/css/style.css    design tokens and components
 assets/icons.svg        16 px symbolic icon set
 assets/img/             WebP images (about 1.6 MB in total, lazy-loaded)
 assets/fonts/           Inter, subset to Latin + Central European characters
-.github/workflows/      GitHub Pages deployment
+.github/workflows/      GitHub Pages deployment and the snap build
+desktop/portfolio.py    desktop app: the site in a GTK window (WebKitGTK)
+desktop/make_english.py makes the English-only copy the desktop app ships
+snap/                   snap package recipe, desktop entry and icon
 ```
 
 The look follows GNOME’s Adwaita conventions (header bar with a view switcher, boxed lists, cards, pill buttons)
@@ -79,6 +82,47 @@ Google Drive links open in the built-in preview only when the file or folder is 
 1. Create a public repository on GitHub and push this folder to the `main` branch.
 2. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
 3. The workflow in `.github/workflows/pages.yml` publishes the site on every push to `main`.
+
+## Desktop app (snap)
+
+The same portfolio, English only, as a desktop app for Ubuntu and other Linux systems. It is a small
+Python app that shows the site in a native GNOME window (GTK 3 and WebKitGTK from the GNOME platform snap).
+
+- **Back and forward buttons** in the window’s header bar follow your clicks through the site
+  (also Alt+← and Alt+→). The header bar switches between dark and light together with the page.
+- **Links to articles and landing pages open in your browser**; email links open your mail app.
+  Google Drive documents open in the preview inside the app.
+- **Shortcuts:** Ctrl+R reload, F11 full screen, Ctrl+Q quit.
+
+**Try it from a checkout** (Ubuntu 24.04):
+
+```sh
+sudo apt install gir1.2-webkit2-4.1 python3-gi
+python3 desktop/portfolio.py
+```
+
+**Build the snap** on your own machine:
+
+```sh
+sudo snap install snapcraft --classic
+snapcraft                                   # builds in an LXD container
+sudo snap install --dangerous ./pavel-soral-portfolio_1.0.0_amd64.snap
+pavel-soral-portfolio
+```
+
+Every push to `main` also builds the snap on GitHub (`.github/workflows/snap.yml`); download it from the
+run’s **Artifacts**.
+
+**Publish to the Snap Store:**
+
+1. Create an Ubuntu One account and register the name: `snapcraft register pavel-soral-portfolio`.
+2. Create credentials and add them to the repository as the secret `SNAPCRAFT_STORE_CREDENTIALS`:
+   `snapcraft export-login --snaps=pavel-soral-portfolio --acls package_access,package_push,package_update,package_release -`
+3. Push a tag such as `v1.0.0`. The workflow builds the snap and releases it to the stable channel.
+   Then anyone can run `sudo snap install pavel-soral-portfolio`.
+
+Change `version` in `snap/snapcraft.yaml` for each release, and fill in `website` and `source-code` there
+once the repository is public.
 
 ## Licenses
 

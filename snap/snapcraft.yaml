@@ -1,0 +1,50 @@
+name: pavel-soral-portfolio
+title: Pavel Šoral Portfolio
+base: core24
+version: '1.0.0'
+summary: Portfolio of Pavel Šoral, creative marketing specialist
+description: |
+  The portfolio of Pavel Šoral as a desktop app: content creation, campaigns,
+  narrative design and creative work, with results from real product launches.
+
+  It is the same site as the web version, in English, in a native GNOME window.
+  Links to articles and landing pages open in your browser. Shared documents
+  open in a preview inside the app.
+license: MIT
+contact: mailto:pavel.soral@proton.me
+# website: https://<your-user>.github.io/<repo-name>/
+# source-code: https://github.com/<your-user>/<repo-name>
+grade: stable
+confinement: strict
+
+platforms:
+  amd64:
+  arm64:
+
+apps:
+  pavel-soral-portfolio:
+    command: bin/pavel-soral-portfolio
+    extensions: [gnome]
+    plugs:
+      - network
+    environment:
+      PORTFOLIO_WEB_ROOT: $SNAP/share/pavel-soral-portfolio/web
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
+      WEBKIT_DISABLE_DMABUF_RENDERER: "1"
+
+parts:
+  portfolio:
+    plugin: nil
+    source: .
+    build-packages:
+      - python3
+    stage-packages:
+      - python3-gi
+    override-build: |
+      set -eu
+      WEB="$CRAFT_PART_INSTALL/share/pavel-soral-portfolio/web"
+      mkdir -p "$WEB"
+      cp -r index.html 404.html assets content "$WEB/"
+      # English only: resolve every translated string to English and hide the language switch
+      python3 desktop/make_english.py "$WEB/content/content.js"
+      install -Dm755 desktop/portfolio.py "$CRAFT_PART_INSTALL/bin/pavel-soral-portfolio"

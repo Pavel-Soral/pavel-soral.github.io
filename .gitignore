@@ -9,3 +9,9 @@
 /drafts/
 .DS_Store
 Thumbs.db
+
+# Snap build output
+*.snap
+parts/
+stage/
+prime/

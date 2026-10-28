@@ -14,11 +14,12 @@
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } },
   };
-  const LANGS = ["en", "sk"];
+  const LANGS = CFG.languages || ["en", "sk"];
   const urlLang = new URLSearchParams(location.search).get("lang");
   let lang = LANGS.includes(urlLang) ? urlLang
     : LANGS.includes(store.get("lang")) ? store.get("lang")
-    : (navigator.language || "").toLowerCase().startsWith("sk") ? "sk" : CFG.defaultLanguage || "en";
+    : LANGS.includes("sk") && (navigator.language || "").toLowerCase().startsWith("sk") ? "sk"
+    : LANGS.includes(CFG.defaultLanguage) ? CFG.defaultLanguage : LANGS[0];
   let theme = store.get("theme") || CFG.defaultTheme || "dark";
 
   // flatten pages, remember their section
@@ -350,7 +351,7 @@
             ${DATA.sections.map((s) => `<a href="#${s === CONTACT ? "contact" : s.id}" data-section="${s.id}">${T(s.title)}</a>`).join("")}
           </nav>
           <div class="header-end">
-            <div class="lang-toggle" role="group" aria-label="${esc(ui("language"))}">
+            <div class="lang-toggle" role="group" aria-label="${esc(ui("language"))}"${LANGS.length < 2 ? " hidden" : ""}>
               ${LANGS.map((l) => `<button type="button" data-lang="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`).join("")}
             </div>
             <button class="icon-button" type="button" data-theme-toggle></button>
@@ -390,6 +391,8 @@
 
   function applyTheme() {
     document.documentElement.setAttribute("data-theme", theme);
+    // Desktop app (snap): tell the native window which theme the page uses.
+    try { window.webkit.messageHandlers.theme.postMessage(theme); } catch (e) { /* not running in the desktop app */ }
     const btn = $("[data-theme-toggle]");
     if (btn) {
       const toLight = theme === "dark";

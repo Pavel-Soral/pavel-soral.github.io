@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Pavel Šoral Portfolio
+GenericName=Portfolio
+Comment=Content creation, campaigns, narrative design and creative work by Pavel Šoral
+Exec=pavel-soral-portfolio
+Icon=${SNAP}/meta/gui/pavel-soral-portfolio.png
+Terminal=false
+Categories=Office;Viewer;
+Keywords=portfolio;marketing;copywriting;content;
+StartupNotify=true
+StartupWMClass=pavel-soral-portfolio
