@@ -132,8 +132,8 @@ window.PORTFOLIO = {
             "sk": "Úvod"
           },
           "role": {
-            "en": "Content Marketing Specialist & Copywriter",
-            "sk": "Špecialista na obsahový marketing a copywriter"
+            "en": "Creative Marketing Specialist",
+            "sk": "Kreatívny marketingový špecialista"
           },
           "intro": {
             "en": "Hi! I’m Pavel, and I write about tech. I take complicated, technical stuff and turn it into stories people actually want to read, and that search engines are happy to rank.",
@@ -177,16 +177,12 @@ window.PORTFOLIO = {
           },
           "layout": "stack",
           "intro": {
-            "en": "I take complicated things and make them clear. What I write works for search engines and for the people actually reading it.",
-            "sk": "Zložité veci podávam jasne. To, čo napíšem, funguje pre vyhľadávače aj pre ľudí, ktorí to naozaj čítajú."
+            "en": "I take complicated things and make them clear. What I create works for search engines and for the people actually engaging with it.",
+            "sk": "Zložité veci podávam jasne. To, čo vytvorím, funguje pre vyhľadávače aj pre ľudí, ktorých to naozaj zaujme."
           },
           "main": [
             {
               "type": "tiles",
-              "title": {
-                "en": "What I aim for",
-                "sk": "O čo sa snažím"
-              },
               "items": [
                 {
                   "icon": "coffee",
@@ -506,8 +502,8 @@ window.PORTFOLIO = {
           },
           "layout": "split",
           "intro": {
-            "en": "After a sales call, people need something to keep. I make the brochures, one-pagers and guides that explain what each product does and who it’s for, start to finish.",
-            "sk": "Po obchodnom stretnutí si ľudia chcú niečo odniesť. Od začiatku do konca pripravujem brožúry, letáky a sprievodcov, ktoré vysvetľujú, čo produkt robí a pre koho je."
+            "en": "After a sales pitch, people need something to keep. I make the brochures, one-pagers and guides that explain what each product does and who it’s for, start to finish.",
+            "sk": "Po obchodnej prezentácii si ľudia chcú niečo odniesť. Od začiatku do konca pripravujem brožúry, letáky a sprievodcov, ktoré vysvetľujú, čo produkt robí a pre koho je."
           },
           "aside": [
             {
@@ -962,8 +958,8 @@ window.PORTFOLIO = {
           },
           "layout": "stack",
           "intro": {
-            "en": "What our six-person marketing team at Photoneo achieved with its 2025 campaigns, compared with 2024. My part was product marketing and copywriting.",
-            "sk": "Čo náš šesťčlenný marketingový tím v Photoneo dosiahol kampaňami v roku 2025 v porovnaní s rokom 2024. Mojou časťou bol produktový marketing a copywriting."
+            "en": "What our marketing team at Photoneo achieved with its 2025 campaigns, compared with 2024. My part was product marketing, content strategy and copywriting.",
+            "sk": "Čo náš marketingový tím v Photoneo dosiahol kampaňami v roku 2025 v porovnaní s rokom 2024. Mojou časťou bol produktový marketing, obsahová stratégia a copywriting."
           },
           "cta": {
             "label": {
@@ -1067,8 +1063,8 @@ window.PORTFOLIO = {
         {
           "id": "two-launches",
           "title": {
-            "en": "Two Launches Side by Side",
-            "sk": "Dve uvedenia na trh vedľa seba"
+            "en": "Two 3D Sensor Launches Side by Side",
+            "sk": "Dve uvedenia 3D senzorov vedľa seba"
           },
           "nav": {
             "en": "Two Launches",
@@ -1076,8 +1072,8 @@ window.PORTFOLIO = {
           },
           "layout": "stack",
           "intro": {
-            "en": "In 2025 Photoneo launched two new 3D cameras. I wrote the brochures and product copy for both. Results as of September 5, 2025.",
-            "sk": "V roku 2025 uviedol Photoneo na trh dve nové 3D kamery. Pre obe som napísal brožúry a produktové texty. Výsledky k 5. 9. 2025."
+            "en": "In 2025 Photoneo launched two new 3D cameras. I built the content and product copy for both. Results as of September 5, 2025.",
+            "sk": "V roku 2025 uviedol Photoneo na trh dve nové 3D kamery. Pre obe som vytvoril obsah a produktové texty. Výsledky k 5. 9. 2025."
           },
           "cta": {
             "label": {
@@ -1202,14 +1198,6 @@ window.PORTFOLIO = {
                   ]
                 }
               ]
-            },
-            {
-              "type": "banner",
-              "icon": "trophy",
-              "text": {
-                "en": "Automatica 2025 in Munich, where PhoXi Gen3 pre-launched: our best trade show yet for leads.",
-                "sk": "Veľtrh Automatica 2025 v Mníchove, kde sme predstavili PhoXi Gen3: náš doteraz najlepší veľtrh na leady."
-              }
             }
           ]
         },
@@ -1221,8 +1209,8 @@ window.PORTFOLIO = {
           },
           "layout": "split",
           "intro": {
-            "en": "In 2025, Photoneo wanted better leads, so we offered e-books, webinars and product leaflets on their own landing pages. I worked with our designers to find the mix that people signed up for.",
-            "sk": "V roku 2025 chcel Photoneo kvalitnejšie leady, a tak sme ponúkali e-knihy, webináre a produktové letáky na samostatných landing pages. S dizajnérmi som hľadal mix, na ktorý sa ľudia naozaj registrovali."
+            "en": "In 2025, Photoneo focused on leads, so we offered e-books, webinars and product leaflets on their own landing pages. I worked with our designers to find the mix that people signed up for.",
+            "sk": "V roku 2025 sa Photoneo zameral na leady, a tak sme ponúkali e-knihy, webináre a produktové letáky na samostatných landing pages. S dizajnérmi som hľadal mix, na ktorý sa ľudia naozaj registrovali."
           },
           "aside": [
             {
@@ -1348,283 +1336,6 @@ window.PORTFOLIO = {
           ]
         },
         {
-          "id": "content-that-converts",
-          "title": {
-            "en": "Content That Converts",
-            "sk": "Obsah, ktorý konvertuje"
-          },
-          "nav": {
-            "en": "Conversion",
-            "sk": "Konverzia"
-          },
-          "layout": "split",
-          "intro": {
-            "en": "People fill in a form to get our e-books, webinars and leaflets. On e-book pages, more than a third of visitors did. January–September 2025.",
-            "sk": "Za naše e-knihy, webináre a letáky ľudia vyplnia formulár. Na stránkach e-kníh to urobila viac ako tretina návštevníkov. Január – september 2025."
-          },
-          "aside": [
-            {
-              "type": "rows",
-              "title": {
-                "en": "Average landing page conversion",
-                "sk": "Priemerná konverzia landing pages"
-              },
-              "items": [
-                {
-                  "icon": "book",
-                  "title": {
-                    "en": "E-books",
-                    "sk": "E-knihy"
-                  },
-                  "suffix": {
-                    "en": "35%",
-                    "sk": "35 %"
-                  }
-                },
-                {
-                  "icon": "play",
-                  "title": {
-                    "en": "On-demand webinars",
-                    "sk": "Webináre zo záznamu"
-                  },
-                  "suffix": {
-                    "en": "21%",
-                    "sk": "21 %"
-                  }
-                },
-                {
-                  "icon": "doc",
-                  "title": {
-                    "en": "Leaflets",
-                    "sk": "Letáky"
-                  },
-                  "suffix": {
-                    "en": "22%",
-                    "sk": "22 %"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "stats",
-              "cols": 1,
-              "items": [
-                {
-                  "value": {
-                    "en": "1.7×",
-                    "sk": "1,7×"
-                  },
-                  "label": {
-                    "en": "higher conversion for e-books than for on-demand webinars",
-                    "sk": "vyššia konverzia pri e-knihách ako pri webinároch zo záznamu"
-                  }
-                }
-              ]
-            }
-          ],
-          "cta": {
-            "label": {
-              "en": "See the E-Books",
-              "sk": "Pozrite si e-knihy"
-            },
-            "link": "ebooks",
-            "url": null
-          },
-          "main": [
-            {
-              "type": "hbars",
-              "title": {
-                "en": "Landing page conversion by e-book",
-                "sk": "Konverzia landing pages podľa e-knihy"
-              },
-              "sub": {
-                "en": "Share of page visitors who downloaded the e-book",
-                "sk": "Podiel návštevníkov stránky, ktorí si e-knihu stiahli"
-              },
-              "max": 50,
-              "items": [
-                {
-                  "label": "Dynamic Assembly with Real-Time 3D Vision",
-                  "value": 45.5,
-                  "display": {
-                    "en": "45.5%",
-                    "sk": "45,5 %"
-                  },
-                  "note": {
-                    "en": "3% of all e-book downloads",
-                    "sk": "3 % všetkých stiahnutí e-kníh"
-                  }
-                },
-                {
-                  "label": "Digital Twins in Automotive Manufacturing",
-                  "value": 41.9,
-                  "display": {
-                    "en": "41.9%",
-                    "sk": "41,9 %"
-                  },
-                  "note": {
-                    "en": "4% of all e-book downloads",
-                    "sk": "4 % všetkých stiahnutí e-kníh"
-                  }
-                },
-                {
-                  "label": "From Press Shop to General Assembly",
-                  "value": 41.2,
-                  "display": {
-                    "en": "41.3%",
-                    "sk": "41,3 %"
-                  },
-                  "note": {
-                    "en": "22% of all e-book downloads",
-                    "sk": "22 % všetkých stiahnutí e-kníh"
-                  }
-                },
-                {
-                  "label": "The Critical Role of 3D Vision in Automotive Quality Control",
-                  "value": 33.3,
-                  "display": {
-                    "en": "33.3%",
-                    "sk": "33,3 %"
-                  },
-                  "note": {
-                    "en": "3% of all e-book downloads",
-                    "sk": "3 % všetkých stiahnutí e-kníh"
-                  }
-                },
-                {
-                  "label": "2D vs 3D Cameras",
-                  "value": 26.6,
-                  "display": {
-                    "en": "26.6%",
-                    "sk": "26,6 %"
-                  },
-                  "note": {
-                    "en": "30% of all e-book downloads",
-                    "sk": "30 % všetkých stiahnutí e-kníh"
-                  }
-                },
-                {
-                  "label": "Choosing the Right 3D Sensor for Your Application",
-                  "value": 26.5,
-                  "display": {
-                    "en": "26.5%",
-                    "sk": "26,5 %"
-                  },
-                  "note": {
-                    "en": "37% of all e-book downloads",
-                    "sk": "37 % všetkých stiahnutí e-kníh"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "contacts-growth",
-          "title": {
-            "en": "Contacts Month After Month",
-            "sk": "Kontakty mesiac za mesiacom"
-          },
-          "nav": {
-            "en": "Contacts",
-            "sk": "Kontakty"
-          },
-          "layout": "split",
-          "intro": {
-            "en": "New contacts from our website forms grew almost every quarter. Downloads, webinars and “Contact us” requests all count here.",
-            "sk": "Nové kontakty z formulárov na webe rástli takmer každý kvartál. Patria sem stiahnutia, webináre aj žiadosti cez „Kontaktujte nás“."
-          },
-          "aside": [
-            {
-              "type": "stats",
-              "cols": 1,
-              "items": [
-                {
-                  "value": {
-                    "en": "2.8×",
-                    "sk": "2,8×"
-                  },
-                  "label": {
-                    "en": "more new contacts in November 2025 than in January 2024. Our best month yet.",
-                    "sk": "viac kontaktov v novembri 2025 ako v januári 2024. Najlepší mesiac."
-                  }
-                },
-                {
-                  "value": {
-                    "en": "+51%",
-                    "sk": "+51 %"
-                  },
-                  "label": {
-                    "en": "more new contacts in an average month of 2025 than in 2024",
-                    "sk": "viac kontaktov mesačne v roku 2025 ako v 2024"
-                  }
-                }
-              ]
-            }
-          ],
-          "cta": {
-            "label": {
-              "en": "See the Landing Pages",
-              "sk": "Pozrite si landing pages"
-            },
-            "link": "landing",
-            "url": null
-          },
-          "main": [
-            {
-              "type": "barchart",
-              "title": {
-                "en": "New contacts from website forms, per month",
-                "sk": "Nové kontakty z webových formulárov za mesiac"
-              },
-              "sub": {
-                "en": "Index, January 2024 = 100",
-                "sk": "Index, január 2024 = 100"
-              },
-              "max": 300,
-              "ticks": [
-                100,
-                200,
-                300
-              ],
-              "labels": [
-                0,
-                18,
-                22
-              ],
-              "start": {
-                "year": 2024,
-                "month": 1
-              },
-              "values": [
-                100,
-                101,
-                104,
-                150,
-                149,
-                148,
-                132,
-                110,
-                134,
-                137,
-                161,
-                125,
-                164,
-                166,
-                159,
-                216,
-                189,
-                177,
-                231,
-                166,
-                202,
-                210,
-                275
-              ]
-            }
-          ]
-        },
-        {
           "id": "social-media",
           "title": {
             "en": "Social Media",
@@ -1638,8 +1349,8 @@ window.PORTFOLIO = {
             },
             "Copywriting",
             {
-              "en": "Shooting and editing",
-              "sk": "Natáčanie a strih"
+              "en": "Video editing",
+              "sk": "Strih videa"
             }
           ],
           "cta": {
@@ -2005,8 +1716,8 @@ window.PORTFOLIO = {
                     "sk": "Písal som"
                   },
                   "sub": {
-                    "en": "The first articles, and the tone everything after followed",
-                    "sk": "Prvé články a tón, ktorého sa držalo všetko ďalšie"
+                    "en": "The first articles, set the tone, researched",
+                    "sk": "Prvé články, určil som tón, robil som rešerše"
                   }
                 },
                 {
@@ -2314,16 +2025,6 @@ window.PORTFOLIO = {
             "en": "When I’m not writing, I’m making music and designing sounds. I take it seriously, so if your project needs custom sound, a mix that actually sounds good, or something better than the usual stock music, count me in!",
             "sk": "Keď nepíšem, robím hudbu a navrhujem zvuky. Beriem to vážne, takže ak váš projekt potrebuje vlastný zvuk, mix, ktorý naozaj dobre znie, alebo niečo lepšie ako bežnú hudbu z databanky, rád pomôžem!"
           },
-          "aside": [
-            {
-              "type": "banner",
-              "icon": "headphones",
-              "text": {
-                "en": "Nothing’s out yet, but I’m happy to share if you ask.",
-                "sk": "Zatiaľ nič nevyšlo, ale ak sa opýtate, rád vám to ukážem."
-              }
-            }
-          ],
           "cta": {
             "label": {
               "en": "Hidden Link?",

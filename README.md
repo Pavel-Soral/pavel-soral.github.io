@@ -10,10 +10,10 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
 ## What’s inside
 
 - **One page per section:** About, Content Creation, Campaigns, Narrative Design and Creative Work, the same
-  sections as the PDF portfolio. Each page is one long scroll of blocks (21 in total), with a sticky row of chips to
+  sections as the PDF portfolio. Each page is one long scroll of blocks (19 in total), with a sticky row of chips to
   jump between them. Every page ends with the same Contact Me block, which the Contact menu item scrolls to.
-- **Animated results:** bars grow and numbers count up when they scroll into view. Hover or focus a bar to read its value.
-  Every chart also has a hidden data table for screen readers.
+- **Animated results:** numbers count up when they scroll into view. Bar charts are supported too (see `barchart` and
+  `hbars` in `assets/js/app.js`).
 - **Documents open in place:** Google Drive files and folders (case studies, magazines, storylines) open in a built-in
   preview. Other articles open on their original site in a new tab.
 - **Two languages:** English and Slovak, with a toggle in the header. `?lang=sk` in the URL opens the Slovak version.
@@ -21,7 +21,6 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
 - **Keyboard friendly:** ← and → move between sections, every control has a visible focus state, and motion is turned off
   for people who ask their system to reduce it.
 
-![Animated chart](docs/screenshot-chart.webp)
 ![Light theme in Slovak](docs/screenshot-light-sk.webp)
 
 ## How it’s built
@@ -41,7 +40,7 @@ assets/fonts/           Inter, subset to Latin + Central European characters
 ```
 
 The look follows GNOME’s Adwaita conventions (header bar with a view switcher, boxed lists, cards, pill buttons)
-with my own “Lime Signal” palette. Links use the hash: `#campaigns` opens a section from the top, `#contacts-growth`
+with my own “Lime Signal” palette. Links use the hash: `#campaigns` opens a section from the top, `#linkedin`
 opens its section and scrolls to that block, and `#contact` scrolls to the contact block. Every block can be linked
 directly, and the site works on any static host without server rules.
 
