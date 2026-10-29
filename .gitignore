@@ -1,5 +1,7 @@
 # Never commit source material or private working files.
 *.pdf
+# …except the documents the site publishes on purpose
+!assets/docs/*.pdf
 *.zip
 *.psd
 *.fig
