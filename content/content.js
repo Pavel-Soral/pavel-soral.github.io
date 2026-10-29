@@ -1769,6 +1769,97 @@ window.PORTFOLIO = {
       ]
     },
     {
+      "id": "design",
+      "title": {
+        "en": "Design",
+        "sk": "Dizajn"
+      },
+      "pages": [
+        {
+          "id": "websites",
+          "title": {
+            "en": "Websites",
+            "sk": "Webové stránky"
+          },
+          "layout": "stack",
+          "intro": {
+            "en": "Websites I designed and built for small businesses, made to work just as well on a phone as on a desktop.",
+            "sk": "Webové stránky, ktoré som navrhol a vytvoril pre malé firmy. Fungujú rovnako dobre na mobile ako na počítači."
+          },
+          "main": [
+            {
+              "type": "sites",
+              "items": [
+                {
+                  "img": {
+                    "src": "assets/img/site-razant.webp",
+                    "w": 1100,
+                    "h": 619,
+                    "alt": "Razant Media homepage on a desktop"
+                  },
+                  "phone": {
+                    "src": "assets/img/site-razant-mobile.webp",
+                    "w": 320,
+                    "h": 639,
+                    "alt": "Razant Media homepage on a phone"
+                  },
+                  "title": "Razant Media",
+                  "sub": {
+                    "en": "Digital marketing agency",
+                    "sk": "Agentúra digitálneho marketingu"
+                  },
+                  "caption": "razantmedia.com",
+                  "url": "https://razantmedia.com/"
+                },
+                {
+                  "img": {
+                    "src": "assets/img/site-mija.webp",
+                    "w": 1100,
+                    "h": 619,
+                    "alt": "Mija beauty salon homepage on a desktop"
+                  },
+                  "phone": {
+                    "src": "assets/img/site-mija-mobile.webp",
+                    "w": 320,
+                    "h": 639,
+                    "alt": "Mija homepage on a phone"
+                  },
+                  "title": "Mija",
+                  "sub": {
+                    "en": "Private beauty salon near Bratislava",
+                    "sk": "Súkromný salón krásy pri Bratislave"
+                  },
+                  "caption": "mija.sk",
+                  "url": "https://mija.sk/"
+                },
+                {
+                  "img": {
+                    "src": "assets/img/site-pet.webp",
+                    "w": 1100,
+                    "h": 619,
+                    "alt": "PetDressers grooming salon homepage on a desktop"
+                  },
+                  "phone": {
+                    "src": "assets/img/site-pet-mobile.webp",
+                    "w": 320,
+                    "h": 639,
+                    "alt": "PetDressers homepage on a phone"
+                  },
+                  "title": "PetDressers",
+                  "sub": {
+                    "en": "Dog and cat grooming salon",
+                    "sk": "Salón starostlivosti o psy a mačky"
+                  },
+                  "caption": "petdressers.netlify.app",
+                  "url": "https://petdressers.netlify.app/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "narrative-design",
       "title": {
         "en": "Narrative Design",

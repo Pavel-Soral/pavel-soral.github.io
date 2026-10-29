@@ -139,6 +139,22 @@
         </${s.url ? "a" : "div"}>`).join("")}
     </div>`;
 
+  R.sites = (b) => `
+    <div class="sites">
+      ${b.items.map((x) => `
+        <a class="site-card card" ${linkAttrs(x.url, t(x.title))}>
+          <div class="site-media">
+            <div class="site-desktop">${imgTag(x.img)}</div>
+            <div class="site-phone">${imgTag(x.phone)}</div>
+          </div>
+          <div class="site-body">
+            <span class="title">${T(x.title)}</span>
+            <span class="site-sub">${T(x.sub)}</span>
+            <span class="caption">${icon("cursor", "cursor-icon")}${T(x.caption)}</span>
+          </div>
+        </a>`).join("")}
+    </div>`;
+
   R.image = (b) => `
     <figure class="figure">
       <div class="frame${b.paper ? " paper-frame" : ""}">${imgTag(b.img)}</div>
