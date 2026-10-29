@@ -14,8 +14,8 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
   jump between them. Every page ends with the same Contact Me block, which the Contact menu item scrolls to.
 - **Animated results:** numbers count up when they scroll into view. Bar charts are supported too (see `barchart` and
   `hbars` in `assets/js/app.js`).
-- **Documents open in place:** Google Drive files and folders (case studies, magazines, storylines) open in a built-in
-  preview. Other articles open on their original site in a new tab.
+- **Documents open in place:** the case studies, brochures and one-pager (PDFs in `assets/docs/`) and Google Drive
+  files open in a built-in preview. On phones, PDFs open in the browser’s own viewer. Other articles open on their original site in a new tab.
 - **Two languages:** English and Slovak, with a toggle in the header. `?lang=sk` in the URL opens the Slovak version.
 - **Light and dark themes** with a toggle; the choice is remembered.
 - **Keyboard friendly:** ← and → move between sections, every control has a visible focus state, and motion is turned off
@@ -34,7 +34,8 @@ content/content.js      all text, links and image references (EN + SK)
 assets/js/app.js        router, page renderers, charts, document preview
 assets/css/style.css    design tokens and components
 assets/icons.svg        16 px symbolic icon set
-assets/img/             WebP images (about 1.6 MB in total, lazy-loaded)
+assets/img/             WebP images (about 1.9 MB in total, lazy-loaded)
+assets/docs/            case studies, brochures and the Aurora VGR Studio one-pager (PDF)
 assets/fonts/           Inter, subset to Latin + Central European characters
 .github/workflows/      GitHub Pages deployment and the snap build
 desktop/portfolio.py    desktop app: the site in a GTK window (WebKitGTK)

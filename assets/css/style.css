@@ -264,7 +264,7 @@ main { display: block; min-height: 60vh; }
 @media (max-width: 520px) { .stats.cols-3, .stats.cols-2.stats-hero { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 420px) { .stats.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .stat.wide { grid-column: 1 / -1; }
-.stat { padding: 18px 20px; display: grid; gap: 2px; align-content: start; min-width: 0; }
+.stat { padding: 18px 20px; display: grid; gap: 2px; align-content: start; min-width: 0; container-type: inline-size; }
 .stat-value {
   font-size: clamp(1.875rem, 1.4rem + 1.4vw, 2.625rem); font-weight: 800; line-height: 1.1; color: var(--accent);
   font-variant-numeric: tabular-nums; letter-spacing: -.01em; margin-bottom: 6px; white-space: nowrap;
@@ -318,7 +318,9 @@ button.media-card { border: 0; padding: 0; text-align: left; cursor: pointer; fo
 /* paper stacks (brochures) */
 .stacks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
 @media (max-width: 540px) { .stacks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.stack-item { display: grid; gap: 10px; align-content: start; }
+.stack-item { display: grid; gap: 10px; align-content: start; color: inherit; text-decoration: none; border-radius: 6px; }
+a.stack-item:hover .stack-title { color: var(--accent); }
+.stack-caption { display: flex; align-items: center; gap: 6px; }
 .paper-stack { position: relative; aspect-ratio: .707; margin-right: 12%; }
 .paper { position: absolute; inset: 0; border-radius: 4px; overflow: hidden; background: #fff; box-shadow: var(--shadow), 0 8px 24px rgba(0, 0, 0, .18); }
 .paper img { width: 100%; height: 100%; object-fit: cover; }
@@ -326,6 +328,12 @@ button.media-card { border: 0; padding: 0; text-align: left; cursor: pointer; fo
 .stack-item:hover .paper.back { transform: translate(22%, 2%) rotate(7deg); }
 .stack-title { font-weight: 700; font-size: var(--fs-heading); line-height: 1.3; }
 .stack-caption, .figure-caption { font-size: var(--fs-caption); color: var(--dim); }
+/* Big numbers shrink with their card so long values like $20,000 never spill out. */
+@supports (font-size: 1cqi) {
+  .stat .stat-value { font-size: min(clamp(1.875rem, 1.4rem + 1.4vw, 2.625rem), 19cqi); }
+  .stats.stats-hero .stat .stat-value { font-size: min(clamp(2.75rem, 2rem + 3vw, 4.75rem), 24cqi); }
+  .stats.compact .stat .stat-value { font-size: min(1.875rem, 24cqi); }
+}
 
 .figure { display: grid; gap: 10px; margin: 0; }
 .figure .frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--button); }

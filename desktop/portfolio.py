@@ -12,7 +12,11 @@ import os
 import sys
 from urllib.parse import urlparse
 
-import gi
+# WebKitGTK's DMA-BUF renderer crashes on some GPU drivers (notably NVIDIA). Turn it off unless the
+# user chose otherwise. This must happen before WebKit starts.
+os.environ.setdefault("WEBKIT_DISABLE_DMABUF_RENDERER", "1")
+
+import gi  # noqa: E402
 
 gi.require_version("Gtk", "3.0")
 gi.require_version("Gdk", "3.0")
@@ -150,8 +154,8 @@ class Window(Gtk.ApplicationWindow):
         if kind == WebKit2.PolicyDecisionType.NEW_WINDOW_ACTION:
             # target="_blank" links: articles, landing pages, "Open in a new tab"
             uri = decision.get_navigation_action().get_request().get_uri()
-            if not self.is_local(uri):
-                self.open_external(uri)
+            if not self.is_local(uri) or uri.lower().split("?")[0].endswith(".pdf"):
+                self.open_external(uri)  # websites in the browser, PDFs in the document viewer
             decision.ignore()
             return True
         if kind == WebKit2.PolicyDecisionType.NAVIGATION_ACTION:

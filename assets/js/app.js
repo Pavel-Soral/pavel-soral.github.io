@@ -49,10 +49,15 @@
   const resolveLink = (c) => (c ? c.url || (c.link ? CFG.links[c.link] : null) || null : null);
 
   /** Attributes for any outbound link. Google Drive files and folders open in the built-in viewer. */
+  // Running inside the desktop app (snap)? Then PDFs open in the system's document viewer instead.
+  const IN_APP = !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.theme);
+  const isPdf = (url) => /\.pdf($|[?#])/i.test(url || "");
+
   function linkAttrs(url, title) {
     const emb = driveEmbed(url);
     let a = `href="${esc(url)}" target="_blank" rel="noopener"`;
     if (emb) a += ` data-viewer="${esc(emb)}" data-viewer-title="${esc(title || "")}"`;
+    else if (isPdf(url) && !IN_APP) a += ` data-viewer="${esc(url)}" data-viewer-kind="pdf" data-viewer-title="${esc(title || "")}"`;
     return a;
   }
 
@@ -128,10 +133,10 @@
   R.stacks = (b) => `
     <div class="stacks">
       ${b.items.map((s) => `
-        <div class="stack-item">
+        <${s.url ? `a class="stack-item" ${linkAttrs(s.url, t(s.title))}` : `div class="stack-item"`}>
           ${paperStack(s.front, s.back)}
-          <div><div class="stack-title">${T(s.title)}</div><div class="stack-caption">${T(s.caption)}</div></div>
-        </div>`).join("")}
+          <div><div class="stack-title">${T(s.title)}</div><div class="stack-caption">${s.url ? icon("cursor", "cursor-icon") : ""}${T(s.caption)}</div></div>
+        </${s.url ? "a" : "div"}>`).join("")}
     </div>`;
 
   R.image = (b) => `
@@ -541,8 +546,11 @@
     if (open) { const a = $("a[aria-current]", sheet) || $("a", sheet); if (a) a.focus(); }
   }
 
-  function openViewer(src, href, title) {
+  function openViewer(src, href, title, kind) {
     const dlg = $("#viewer");
+    // Phones show PDFs badly inside a frame: open them in the browser's own viewer there.
+    if (kind === "pdf" && window.matchMedia("(max-width: 700px)").matches) { window.open(href, "_blank", "noopener"); return; }
+    $(".viewer-note", dlg).hidden = kind === "pdf";
     $(".viewer-title", dlg).textContent = title || ui("viewer");
     $("[data-viewer-open]", dlg).href = href;
     $("iframe", dlg).src = src;
@@ -572,7 +580,7 @@
       const v = e.target.closest("[data-viewer]");
       if (v && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) {
         e.preventDefault();
-        openViewer(v.dataset.viewer, v.getAttribute("href"), v.dataset.viewerTitle);
+        openViewer(v.dataset.viewer, v.getAttribute("href"), v.dataset.viewerTitle, v.dataset.viewerKind);
         return;
       }
       if (e.target.closest("[data-viewer-close]")) { $("#viewer").close(); return; }

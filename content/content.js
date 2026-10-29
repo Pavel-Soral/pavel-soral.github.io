@@ -311,14 +311,14 @@ window.PORTFOLIO = {
                 },
                 {
                   "img": {
-                    "src": "assets/img/blog-px-web3.webp",
-                    "w": 336,
-                    "h": 189,
-                    "alt": "Gamer wearing a headset"
+                    "src": "assets/img/blog-welding.webp",
+                    "w": 720,
+                    "h": 405,
+                    "alt": "Robot arm welding a steel part, sparks flying"
                   },
-                  "title": "Player Experience (PX) in Web3 Gaming",
-                  "caption": "immutable.com",
-                  "url": "https://www.immutable.com/blog/player-experience-crypto-games"
+                  "title": "Automated Welding: Why Throughput Lives or Dies on What Feeds the Cell",
+                  "caption": "photoneo.com",
+                  "url": "https://www.photoneo.com/automated-welding/"
                 },
                 {
                   "img": {
@@ -438,11 +438,11 @@ window.PORTFOLIO = {
           ],
           "cta": {
             "label": {
-              "en": "See the Case Studies",
-              "sk": "Pozrite si štúdie"
+              "en": "Read the Case Studies",
+              "sk": "Prečítajte si prípadové štúdie"
             },
-            "link": "cases",
-            "url": null
+            "link": null,
+            "url": "assets/docs/case-studies.pdf"
           },
           "main": [
             {
@@ -574,7 +574,8 @@ window.PORTFOLIO = {
                   "caption": {
                     "en": "Brochure · 20 pages",
                     "sk": "Brožúra · 20 strán"
-                  }
+                  },
+                  "url": "assets/docs/motioncam-3d-color-blue-brochure.pdf"
                 },
                 {
                   "front": {
@@ -593,7 +594,8 @@ window.PORTFOLIO = {
                   "caption": {
                     "en": "Brochure · 20 pages",
                     "sk": "Brožúra · 20 strán"
-                  }
+                  },
+                  "url": "assets/docs/phoxi-3d-scanner-gen3-brochure.pdf"
                 },
                 {
                   "front": {
@@ -612,7 +614,8 @@ window.PORTFOLIO = {
                   "caption": {
                     "en": "Software one-pager",
                     "sk": "Jednostranový leták o softvéri"
-                  }
+                  },
+                  "url": "assets/docs/aurora-vgr-studio-one-pager.pdf"
                 }
               ]
             },
@@ -714,14 +717,6 @@ window.PORTFOLIO = {
             "en": "From the first script to the live stream, I worked on Photoneo’s product webinars. I wrote the scripts and the content, and worked with the presenters and product teams to get every detail right.",
             "sk": "Na produktových webinároch Photoneo som pracoval od prvého scenára až po živý prenos. Písal som scenáre aj obsah a s prezentujúcimi a produktovými tímami som ladil každý detail."
           },
-          "cta": {
-            "label": {
-              "en": "Watch the Webinars",
-              "sk": "Pozrite si webináre"
-            },
-            "link": "webinars",
-            "url": null
-          },
           "main": [
             {
               "type": "cards",
@@ -743,7 +738,7 @@ window.PORTFOLIO = {
                     "en": "Product launch event",
                     "sk": "Uvedenie produktu na trh"
                   },
-                  "link": "webinars"
+                  "url": "https://ai.photoneo.com/phoxi-3d-scanner-gen3-launch-webinar"
                 },
                 {
                   "img": {
@@ -760,7 +755,7 @@ window.PORTFOLIO = {
                     "en": "Product launch event",
                     "sk": "Uvedenie produktu na trh"
                   },
-                  "link": "webinars"
+                  "url": "https://ai.photoneo.com/motioncam-3d-blue-launch-webinar"
                 },
                 {
                   "img": {
@@ -774,7 +769,7 @@ window.PORTFOLIO = {
                     "en": "Webinar with ABB Robotics",
                     "sk": "Webinár s ABB Robotics"
                   },
-                  "link": "webinars"
+                  "url": "https://ai.photoneo.com/abb-vision-robotics-webinar"
                 }
               ]
             },
@@ -1317,8 +1312,11 @@ window.PORTFOLIO = {
                     "alt": "AneeMate game website"
                   },
                   "title": "AneeMate",
-                  "caption": "aneemate.com",
-                  "url": "https://aneemate.com/"
+                  "caption": {
+                    "en": "Archived site, 2024",
+                    "sk": "Archív stránky, 2024"
+                  },
+                  "url": "https://web.archive.org/web/20240701000000/https://aneemate.com/"
                 },
                 {
                   "img": {
@@ -1328,8 +1326,11 @@ window.PORTFOLIO = {
                     "alt": "Citizen Conflict game website"
                   },
                   "title": "Citizen Conflict",
-                  "caption": "citizenconflict.com",
-                  "url": "https://citizenconflict.com/"
+                  "caption": {
+                    "en": "Archived site, 2024",
+                    "sk": "Archív stránky, 2024"
+                  },
+                  "url": "https://web.archive.org/web/20240701000000/https://citizenconflict.com/"
                 }
               ]
             }
@@ -1751,7 +1752,7 @@ window.PORTFOLIO = {
               "sk": "Otvoriť GameFi Hub"
             },
             "link": null,
-            "url": "https://cointelegraph.com/sponsored/qorpo-gamefi-hub"
+            "url": "https://cointelegraph.com/sponsored/qorpo-gamefi-hub-demo/"
           },
           "main": [
             {
@@ -2027,11 +2028,11 @@ window.PORTFOLIO = {
           },
           "cta": {
             "label": {
-              "en": "Hidden Link?",
-              "sk": "Skrytý odkaz?"
+              "en": "Listen on Spotify",
+              "sk": "Počúvajte na Spotify"
             },
             "link": null,
-            "url": "https://drive.google.com/drive/folders/1ohjyU-4N7VII4d8AJkh8_Bt25K0wdbqR?usp=sharing"
+            "url": "https://open.spotify.com/artist/3tQ9YAXIFkyQ1llP2lJUMG?si=bwryl4L3RbCEcJV8P_3awA"
           },
           "main": [
             {
