@@ -136,8 +136,8 @@ window.PORTFOLIO = {
             "sk": "Kreatívny marketingový špecialista"
           },
           "intro": {
-            "en": "Hi! I’m Pavel, and I write about tech. I take complicated, technical stuff and turn it into stories people actually want to read, and that search engines are happy to rank.",
-            "sk": "Volám sa Pavel a píšem o technológiách. Zložité technické veci premieňam na príbehy, ktoré ľudia naozaj chcú čítať a ktoré vyhľadávače radi posunú na vrchol."
+            "en": "Hi! I’m Pavel, and I shape techspeak into stories that resonate. I take technical complexities and turn them into narratives people will understand and algorithms will reward.",
+            "sk": "Ahoj! Volám sa Pavel a technický žargón pretváram na príbehy, ktoré zarezonujú. Zložité technické témy premieňam na rozprávanie, ktorému ľudia porozumejú a ktoré algoritmy odmenia."
           },
           "avatar": {
             "src": "assets/img/avatar.webp",
@@ -176,10 +176,6 @@ window.PORTFOLIO = {
             "sk": "Prístup"
           },
           "layout": "stack",
-          "intro": {
-            "en": "I take complicated things and make them clear. What I create works for search engines and for the people actually engaging with it.",
-            "sk": "Zložité veci podávam jasne. To, čo vytvorím, funguje pre vyhľadávače aj pre ľudí, ktorých to naozaj zaujme."
-          },
           "main": [
             {
               "type": "tiles",
@@ -240,8 +236,8 @@ window.PORTFOLIO = {
           },
           "layout": "split",
           "intro": {
-            "en": "At Photoneo, I sit between the product team and marketing, and write the articles people are already searching for.",
-            "sk": "V Photoneo spájam produktový tím s marketingom a píšem články, ktoré ľudia už aj tak hľadajú."
+            "en": "I sit between the product team and marketing, and write the articles people are already searching for.",
+            "sk": "Spájam produktový tím s marketingom a píšem články, ktoré ľudia už aj tak hľadajú."
           },
           "aside": [
             {
@@ -254,8 +250,8 @@ window.PORTFOLIO = {
                     "sk": "+129 %"
                   },
                   "label": {
-                    "en": "more desktop traffic",
-                    "sk": "viac návštev z počítačov"
+                    "en": "more desktop traffic, year over year",
+                    "sk": "viac návštev z počítačov medziročne"
                   }
                 },
                 {
@@ -378,8 +374,8 @@ window.PORTFOLIO = {
           "layout": "split",
           "flip": true,
           "intro": {
-            "en": "I handled every case study from start to finish.",
-            "sk": "Každú prípadovú štúdiu som pripravil od začiatku do konca."
+            "en": "I crafted every case study from start to finish.",
+            "sk": "Každú prípadovú štúdiu som vytvoril od začiatku do konca."
           },
           "aside": [
             {
@@ -502,8 +498,8 @@ window.PORTFOLIO = {
           },
           "layout": "split",
           "intro": {
-            "en": "After a sales pitch, people need something to keep. I make the brochures, one-pagers and guides that explain what each product does and who it’s for, start to finish.",
-            "sk": "Po obchodnej prezentácii si ľudia chcú niečo odniesť. Od začiatku do konca pripravujem brožúry, letáky a sprievodcov, ktoré vysvetľujú, čo produkt robí a pre koho je."
+            "en": "After a sales pitch, people need something to digest the talk. I make the brochures, one-pagers and guides that explain what each product does and who it’s for, start to finish.",
+            "sk": "Po obchodnej prezentácii ľudia potrebujú niečo, čo im pomôže všetko si v pokoji prejsť. Od začiatku do konca pripravujem brožúry, letáky a sprievodcov, ktoré vysvetľujú, čo produkt robí a pre koho je."
           },
           "aside": [
             {
@@ -1124,16 +1120,6 @@ window.PORTFOLIO = {
                         "en": "more people actively engaged",
                         "sk": "viac aktívne zapojených ľudí"
                       }
-                    },
-                    {
-                      "value": {
-                        "en": "67%",
-                        "sk": "67 %"
-                      },
-                      "label": {
-                        "en": "of launch event sign-ups came from EMEA",
-                        "sk": "registrácií na launch event bolo z EMEA"
-                      }
                     }
                   ]
                 },
@@ -1178,16 +1164,6 @@ window.PORTFOLIO = {
                       "label": {
                         "en": "engaged people were brand-new contacts",
                         "sk": "zapojený človek bol úplne nový kontakt"
-                      }
-                    },
-                    {
-                      "value": {
-                        "en": "35%",
-                        "sk": "35 %"
-                      },
-                      "label": {
-                        "en": "of webinar registrations came from the USA and Canada",
-                        "sk": "registrácií na webinár prišlo z USA a Kanady"
                       }
                     }
                   ]
@@ -1411,179 +1387,6 @@ window.PORTFOLIO = {
                   },
                   "title": "Instagram",
                   "caption": "Photoneo"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "linkedin",
-          "title": {
-            "en": "LinkedIn That Works",
-            "sk": "LinkedIn, ktorý funguje"
-          },
-          "nav": "LinkedIn",
-          "layout": "stack",
-          "intro": {
-            "en": "Photoneo’s LinkedIn page, September to November 2025.",
-            "sk": "LinkedIn stránka Photoneo, september až november 2025."
-          },
-          "cta": {
-            "label": {
-              "en": "See More Posts",
-              "sk": "Ďalšie príspevky"
-            },
-            "link": "social",
-            "url": null
-          },
-          "main": [
-            {
-              "type": "stats",
-              "cols": 3,
-              "items": [
-                {
-                  "value": {
-                    "en": "+35%",
-                    "sk": "+35 %"
-                  },
-                  "label": {
-                    "en": "more impressions",
-                    "sk": "viac zobrazení"
-                  },
-                  "sub": {
-                    "en": "November vs. September",
-                    "sk": "November oproti septembru"
-                  }
-                },
-                {
-                  "value": {
-                    "en": "2.68%",
-                    "sk": "2,68 %"
-                  },
-                  "label": {
-                    "en": "average engagement rate",
-                    "sk": "priemerná miera interakcie"
-                  },
-                  "sub": {
-                    "en": "Across all posts, three months",
-                    "sk": "Všetky príspevky, tri mesiace"
-                  }
-                },
-                {
-                  "value": {
-                    "en": "+26%",
-                    "sk": "+26 %"
-                  },
-                  "label": {
-                    "en": "more new followers",
-                    "sk": "viac nových sledovateľov"
-                  },
-                  "sub": {
-                    "en": "November vs. September, 60% organic",
-                    "sk": "November oproti septembru, 60 % organicky"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "columns",
-              "items": [
-                {
-                  "type": "rows",
-                  "title": {
-                    "en": "Top organic posts, by total engagement",
-                    "sk": "Najlepšie organické príspevky podľa interakcií"
-                  },
-                  "items": [
-                    {
-                      "icon": "star",
-                      "title": {
-                        "en": "Webinar with ABB",
-                        "sk": "Webinár s ABB"
-                      },
-                      "sub": {
-                        "en": "35% of sign-ups were new contacts",
-                        "sk": "35 % registrovaných boli nové kontakty"
-                      },
-                      "suffix": {
-                        "en": "9.67%",
-                        "sk": "9,67 %"
-                      }
-                    },
-                    {
-                      "icon": "pencil",
-                      "title": {
-                        "en": "Blog post: The Tech Behind Blue Laser",
-                        "sk": "Blogový článok: The Tech Behind Blue Laser"
-                      },
-                      "sub": {
-                        "en": "Technical deep dive",
-                        "sk": "Technický ponor do hĺbky"
-                      },
-                      "suffix": {
-                        "en": "8.90%",
-                        "sk": "8,90 %"
-                      }
-                    },
-                    {
-                      "icon": "team",
-                      "title": {
-                        "en": "Partner success: Rebl Industries",
-                        "sk": "Úspech partnera: Rebl Industries"
-                      },
-                      "sub": {
-                        "en": "Social proof from a partner",
-                        "sk": "Dôkaz z praxe od partnera"
-                      },
-                      "suffix": {
-                        "en": "9.38%",
-                        "sk": "9,38 %"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "rows",
-                  "title": {
-                    "en": "Case study videos",
-                    "sk": "Videá k prípadovým štúdiám"
-                  },
-                  "items": [
-                    {
-                      "icon": "play",
-                      "title": {
-                        "en": "Picking heavy brake discs",
-                        "sk": "Vyberanie ťažkých brzdových kotúčov"
-                      },
-                      "sub": {
-                        "en": "Viewers watched 10 s on average",
-                        "sk": "Diváci pozerali v priemere 10 s"
-                      },
-                      "suffix": {
-                        "en": "5.57%",
-                        "sk": "5,57 %"
-                      }
-                    },
-                    {
-                      "icon": "play",
-                      "title": {
-                        "en": "Crash car inspection",
-                        "sk": "Kontrola auta po nárazovej skúške"
-                      },
-                      "sub": {
-                        "en": "Viewers watched 13 s on average",
-                        "sk": "Diváci pozerali v priemere 13 s"
-                      },
-                      "suffix": {
-                        "en": "6.66%",
-                        "sk": "6,66 %"
-                      }
-                    }
-                  ],
-                  "foot": {
-                    "en": "Organic engagement rate shown for every post.",
-                    "sk": "Pri každom príspevku je uvedená organická miera interakcie."
-                  }
                 }
               ]
             }
@@ -2114,8 +1917,8 @@ window.PORTFOLIO = {
           "layout": "split",
           "flip": true,
           "intro": {
-            "en": "When I’m not writing, I’m making music and designing sounds. I take it seriously, so if your project needs custom sound, a mix that actually sounds good, or something better than the usual stock music, count me in!",
-            "sk": "Keď nepíšem, robím hudbu a navrhujem zvuky. Beriem to vážne, takže ak váš projekt potrebuje vlastný zvuk, mix, ktorý naozaj dobre znie, alebo niečo lepšie ako bežnú hudbu z databanky, rád pomôžem!"
+            "en": "I make music and design sounds. I take it seriously, so if your project needs custom sound, a mix that actually sounds good, or something better than the usual stock music, count me in!",
+            "sk": "Robím hudbu a navrhujem zvuky. Beriem to vážne, takže ak váš projekt potrebuje vlastný zvuk, mix, ktorý naozaj dobre znie, alebo niečo lepšie ako bežnú hudbu z databanky, rád pomôžem!"
           },
           "cta": {
             "label": {
@@ -2154,8 +1957,8 @@ window.PORTFOLIO = {
             "sk": "Kontaktujte ma"
           },
           "intro": {
-            "en": "Let’s make something people actually want to read.",
-            "sk": "Poďme vytvoriť niečo, čo ľudia naozaj chcú čítať."
+            "en": "Let’s build something that inspires.",
+            "sk": "Poďme vytvoriť niečo, čo inšpiruje."
           },
           "avatar": {
             "src": "assets/img/avatar.webp",

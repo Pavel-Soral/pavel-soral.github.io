@@ -10,7 +10,7 @@ It runs in any browser, works on phones, and has light and dark themes in Englis
 ## What’s inside
 
 - **One page per section:** About, Content Creation, Campaigns, Design, Narrative Design and Creative Work, the same
-  sections as the PDF portfolio. Each page is one long scroll of blocks (20 in total), with a sticky row of chips to
+  sections as the PDF portfolio. Each page is one long scroll of blocks (19 in total), with a sticky row of chips to
   jump between them. Every page ends with the same Contact Me block, which the Contact menu item scrolls to.
 - **Animated results:** numbers count up when they scroll into view. Bar charts are supported too (see `barchart` and
   `hbars` in `assets/js/app.js`).
@@ -44,7 +44,7 @@ snap/                   snap package recipe, desktop entry and icon
 ```
 
 The look follows GNOME’s Adwaita conventions (header bar with a view switcher, boxed lists, cards, pill buttons)
-with my own “Lime Signal” palette. Links use the hash: `#campaigns` opens a section from the top, `#linkedin`
+with my own “Lime Signal” palette. Links use the hash: `#campaigns` opens a section from the top, `#social-media`
 opens its section and scrolls to that block, and `#contact` scrolls to the contact block. Every block can be linked
 directly, and the site works on any static host without server rules.
 
